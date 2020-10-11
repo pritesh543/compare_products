@@ -12,14 +12,9 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ("category_name",)
 
 class ProductSerializer(serializers.ModelSerializer):
-    #product_set = ProductReviewSerializer(many=True)
-    #category_id = serializers.SlugRelatedField(many=False, slug_field="id", read_only=True)
-    #category_id = CategorySerializer()
-    #category_id = serializers.CharField(source='products_set', read_only=True)
+    category_name = serializers.SerializerMethodField('get_category_name')
 
-    category_name = serializers.SerializerMethodField('is_category')
-
-    def is_category(self, product):
+    def get_category_name(self, product):
         return product.category_id.category_name
 
     class Meta:
@@ -29,7 +24,13 @@ class ProductSerializer(serializers.ModelSerializer):
             "product_id",
             "product_name",
             "merchant_name",
-            "category_name",
-            "brand"
+            "listing_price",
+            "sale_price",
+            "discount",
+            "brand",
+            "description",
+            "rating",
+            "reviews",
+            "url",
+            "category_name"
         ]
-

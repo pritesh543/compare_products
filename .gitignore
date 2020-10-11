@@ -1,0 +1,3 @@
+# ignore python complied & cache files
+
+compare_products/__pycache__/*.pyc
