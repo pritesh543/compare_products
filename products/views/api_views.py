@@ -61,7 +61,9 @@ class ProductView(viewsets.ViewSet):
         api_resp["status"] = status.HTTP_200_OK
         api_resp["message"] = "Records fetched successfully !"
         api_resp["is_error"] = False
-        api_resp["product_details"] = products_serializer.data
+        api_resp["product_details"] = sorted(products_serializer.data,
+                                             key=lambda k: (k['rating'] is not None,
+                                                            k['rating']), reverse=True)
 
         return JsonResponse(api_resp, status=status.HTTP_200_OK, safe=False)
 
