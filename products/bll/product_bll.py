@@ -39,6 +39,17 @@ class ProductManager:
             category = Category.objects.create(**category_info)
             return category
 
+    def check_file_extension(self, file_name):
+        """
+
+        :param file_name:
+        :return: message
+        """
+        if file_name.split(".")[-1] in ['csv', 'xlsx']:
+            return True, "file supported"
+        else:
+            return False, "only `csv` or `xlsx` supported as of now."
+
     def create_product(self, products):
         for product_info in products:
             product_info['category_id'] = self.get_category(product_info.get('category_name'))

@@ -21,7 +21,7 @@ This service is build on python Django REST framework.
 #### Clone the repository
 
 ```bash
-git clone 
+git clone git@github.com:pritesh543/compare_products.git
 cd compare_products
 ```
 
@@ -46,10 +46,16 @@ python manage.py runserver [port]
 
 - Endpoints to get the product details filtered by category and name:
 ```bash
-http://127.0.0.1:[port]/products
+http://127.0.0.1:[port]/products?product_name={product_name}&product_category={product_category}
 ```
 Parameters: product_category, product_name.
 
 - Endpoint to push the data into database:
 ```bash
-http://127.0.0.1:[port]/products/push
+http://127.0.0.1:[port]/products/push/
+```
+- Endpoint to batch import (upload file) into database:
+currenly supported: `csv` , ``xlsx``
+```bash
+http://127.0.0.1:[port]/products/push/batch/
+```

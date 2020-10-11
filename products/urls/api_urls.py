@@ -10,6 +10,10 @@ urlpatterns = [
 
     url(r'^products/push/$',
         api.ProductView.as_view({'post':'create_products'}),
+        name='create_products'),
+
+    url(r'^products/push/batch/$',
+        api.ProductView.as_view({'post':'create_products_batch'}),
         name='create_products')
 
 ]

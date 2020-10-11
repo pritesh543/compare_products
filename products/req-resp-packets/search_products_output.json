@@ -1,0 +1,37 @@
+{
+    "message": "Records fetched successfully !",
+    "is_error": false,
+    "status": 200,
+    "product_details": [
+        {
+            "id": 207,
+            "product_id": "SRTEH2FF9KEDEFGF",
+            "product_name": "Alisha Solid Women's Cycling Shorts",
+            "merchant_name": "Flipkart",
+            "listing_price": 1378.0,
+            "sale_price": 999.0,
+            "discount": 379.0,
+            "brand": "Alisha",
+            "description": "Key Features of Alisha Solid Women's Cycling Shorts Cotton Lycra Navy, Red, Navy,Specifications of Alisha Solid Women's Cycling Shorts Shorts Details Number of Contents in Sales Package Pack of 3 Fabric Cotton Lycra Type Cycling Shorts General Details Pattern Solid Ideal For Women's Fabric Care Gentle Machine Wash in Lukewarm Water, Do Not Bleach Additional Details Style Code ALTHT_3P_21 In the Box 3 shorts",
+            "rating": null,
+            "reviews": "nan",
+            "url": "http://www.flipkart.com/alisha-solid-women-s-cycling-shorts/p/itmeh2ffvzetthbb?pid=SRTEH2FF9KEDEFGF",
+            "category_name": "Shorts"
+        },
+        {
+            "id": 210,
+            "product_id": "SRTEH2F6HUZMQ6SJ",
+            "product_name": "Alisha Solid Women's Cycling Shorts",
+            "merchant_name": "Flipkart",
+            "listing_price": 966.0,
+            "sale_price": 699.0,
+            "discount": 267.0,
+            "brand": "Alisha",
+            "description": "Key Features of Alisha Solid Women's Cycling Shorts Cotton Lycra Black, Red,Specifications of Alisha Solid Women's Cycling Shorts Shorts Details Number of Contents in Sales Package Pack of 2 Fabric Cotton Lycra Type Cycling Shorts General Details Pattern Solid Ideal For Women's Fabric Care Gentle Machine Wash in Lukewarm Water, Do Not Bleach Additional Details Style Code ALTGHT_11 In the Box 2 shorts",
+            "rating": null,
+            "reviews": "nan",
+            "url": "http://www.flipkart.com/alisha-solid-women-s-cycling-shorts/p/itmeh2f6sdgah2pq?pid=SRTEH2F6HUZMQ6SJ",
+            "category_name": "Shorts"
+        }
+    ]
+}
