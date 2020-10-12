@@ -8,16 +8,22 @@ WORKDIR /app
 
 
 # Add current directory code to working directory
-#ADD ./app /app
+ADD . /app/
 
 
-# Install project dependencies
+# Copy project dependencies
 COPY ./requirement.txt /app/requirement.txt
 
+
+# Install Dependencies
 RUN pip install -r requirement.txt
 
+
+# Copy to app
 COPY . /app/
 
-CMD ["python", "manage.py", "runserver", "8000"]
+
+# Run server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 #RUN python manage.py runserver 0.0.0.0:8000
 
