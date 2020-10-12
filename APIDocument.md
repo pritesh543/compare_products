@@ -135,7 +135,7 @@ POST /products/push/batch/ HTTP/1.1
 Accept: application/vnd.ms-excel
 Content-Type: multipart/form-data
 {
-    'dataset': 'file.xlsx'
+    "dataset": "file.xlsx"
 }
 ```
 * [Sample Dataset (file to upload / batch import)](https://github.com/pritesh543/compare_products/blob/master/tests/sample_dataset.xlsx)
