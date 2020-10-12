@@ -2,4 +2,9 @@
 
 compare_products/__pycache__/*.pyc
 products/__pycache__/*.pyc
+common/__pycache__/*.pyc
+products/bll/__pycache__/*.pyc
+products/migrations/__pycache__/*.pyc
+products/urls/__pycache__/*.pyc
+products/views/__pycache__
 logs/*.log
