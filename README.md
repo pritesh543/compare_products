@@ -8,9 +8,8 @@ This service is build on python Django REST framework.
    * [How to run the Service](#how-to-run-the-Service)
       * [Installation](#installation)
          * [Clone the repository](#clone-the-repository)
-         * [Run on Docker](#Run-on-docker)
-         * [To Run Manually](#run-this-service)
-         * [Install with virtualenv](#install-with-virtualenv)
+         * [Run on Docker](#run-on-docker)
+         * [To Run Manually](#to-run-manually)
       * [API Documentation](#api-documentation)
 
 
