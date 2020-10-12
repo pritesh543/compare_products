@@ -26,7 +26,7 @@ http code 400
 
 **Request:**
 ```json
-GET /products?product_name={product_name}&product_category={product_category} HTTP/1.1
+GET /products?product_name=product_name&product_category=product_category HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 
@@ -134,13 +134,11 @@ Content-Length: 82
 POST /products/push/batch/ HTTP/1.1
 Accept: application/vnd.ms-excel
 Content-Type: multipart/form-data
-
-files = {'dataset': ('sample_dataset.xlsx',
-                         open('sample_dataset.xlsx', 'rb'),
-                         'application/vnd.ms-excel')}
-
+{
+    'dataset': 'file.xlsx'
+}
 ```
-* [Sample Dataset (file to upload)](/compare_products/products/tests/sample_dataset.xlsx)
+* [Sample Dataset (file to upload / batch import)](https://github.com/pritesh543/compare_products/blob/master/tests/sample_dataset.xlsx)
 
 
 **Successful Response:**
@@ -178,7 +176,7 @@ Content-Length: 82
 
 **Request:**
 ```json
-POST /products/pull/{merchant_code} HTTP/1.1
+POST /products/pull/merchant_code HTTP/1.1
 Accept: */*
 Content-Type: application/text
 
@@ -188,9 +186,9 @@ POST /products/pull/WALMART HTTP/1.1
 POST /products/pull/ADIDAS HTTP/1.1
 
 ```
-* [Sample Datasource To Pull - ADIDAS](/compare_products/products/pull_dataset/adidas_sample_dataset.json)
-* [Sample Datasource To Pull - AMAZON](/compare_products/products/pull_dataset/amazon_sample_dataset.json)
-* [Sample Datasource To Pull - WALMART](/compare_products/products/pull_dataset/walmart_sample_dataset.json)
+* [Sample Datasource To Pull - ADIDAS](https://github.com/pritesh543/compare_products/blob/master/products/pull_dataset/adidas_sample_dataset.json)
+* [Sample Datasource To Pull - AMAZON](https://github.com/pritesh543/compare_products/blob/master/products/pull_dataset/amazon_sample_dataset.json)
+* [Sample Datasource To Pull - WALMART](https://github.com/pritesh543/compare_products/blob/master/products/pull_dataset/walmart_sample_dataset.json)
 
 **Successful Response:**
 ```json
