@@ -1,3 +1,8 @@
+"""
+This is model serializer modules
+validate(s) the data like ever
+"""
+
 from rest_framework import serializers
 from products.models import Product, Review, Category
 

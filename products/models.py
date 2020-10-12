@@ -1,10 +1,10 @@
+"""
+Define you database here in
+ORM mapping
+easy to read and write
+"""
+
 from django.db import models
-
-# Create your models here.
-
-from django.db import models
-
-# Create your models here.
 
 class Category(models.Model):
     category_name = models.CharField(max_length=128)
@@ -18,10 +18,10 @@ class Product(models.Model):
     sale_price = models.FloatField(default=1.0)
     discount = models.FloatField(default=0)
     brand = models.CharField(max_length=128)
-    description = models.CharField(max_length=512)
+    description = models.CharField(max_length=512, null=True, blank=True)
     rating = models.FloatField(null=True, blank=True, default=None)
-    reviews = models.CharField(max_length=1024)
-    url = models.CharField(max_length=512)
+    reviews = models.CharField(max_length=1024, null=True, blank=True)
+    url = models.CharField(max_length=512, null=True, blank=True)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 class Review(models.Model):

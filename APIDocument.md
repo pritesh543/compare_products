@@ -1,5 +1,5 @@
 # API Documentation
-This API uses `POST` & ``GET`` request to communicate and HTTP [response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) to indentify status and errors. All responses come in standard JSON. 
+This API uses `POST` & ``GET`` request to communicate and HTTP [response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) to identify status and errors. All responses come in standard JSON. 
 ### Response Codes
 ```
 200: Success
@@ -12,10 +12,11 @@ This API uses `POST` & ``GET`` request to communicate and HTTP [response codes](
 ### Example Error Message
 ```json
 http code 400
+
 {
     "status": 206,
     "message": "key missing in request",
-    "is_error": True
+    "is_error": true
 }
 ```
 
@@ -120,7 +121,7 @@ Content-Length: 82
 {
     "code": 500,
     "message": "exception {e}",
-    "is_error": True
+    "is_error": true
 }
 ``` 
 
@@ -167,6 +168,55 @@ Content-Length: 82
 {
     "code": 500,
     "message": "exception {e}",
-    "is_error": True
+    "is_error": true
 }
 ``` 
+
+## (4) Pull Products (from merchant/data source)
+**You send:**  merchant_code
+**You get:** count of records inserted.
+
+**Request:**
+```json
+POST /products/pull/{merchant_code} HTTP/1.1
+Accept: */*
+Content-Type: application/text
+
+TryOut: AMAZON 'OR' WALMART 'OR' ADIDAS
+POST /products/pull/AMAZON HTTP/1.1
+POST /products/pull/WALMART HTTP/1.1
+POST /products/pull/ADIDAS HTTP/1.1
+
+```
+* [Sample Datasource To Pull - ADIDAS](/compare_products/products/pull_dataset/adidas_sample_dataset.json)
+* [Sample Datasource To Pull - AMAZON](/compare_products/products/pull_dataset/amazon_sample_dataset.json)
+* [Sample Datasource To Pull - WALMART](/compare_products/products/pull_dataset/walmart_sample_dataset.json)
+
+**Successful Response:**
+```json
+HTTP/1.1 200 OK
+Server: WSGIServer/0.2 CPython/3.8.6
+Content-Type: application/json
+Content-Length: 82
+
+{
+    "message": "20 record(s) inserted successfully",
+    "is_error": false,
+    "status": 200
+}
+
+```
+
+**Failed Response:**
+```json
+HTTP/1.1 200 OK
+Server: WSGIServer/0.2 CPython/3.8.6
+Content-Type: application/json
+Content-Length: 82
+
+{
+    "code": 200,
+    "message": "No Data Available or merchant_code not found !",
+    "is_error": true
+}
+```

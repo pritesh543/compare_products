@@ -1,3 +1,5 @@
-from django.shortcuts import render
+"""
+You can put your web views here
+callable from UI
 
-# Create your views here.
+"""
