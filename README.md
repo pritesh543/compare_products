@@ -1,6 +1,6 @@
 # compare_products
 
-This Product Comparison service compares the similar products from different website and will provide the flexibility to check the available price from different merchants before deciding which one to buy.
+This "Product Comparison" service compares the similar products from different website(s) and retail stores and provides the flexibility to check the available price from different merchants before deciding which one to buy.
 This service is build on python Django REST framework.
 # Table of Contents
 
@@ -8,11 +8,11 @@ This service is build on python Django REST framework.
    * [How to run the Service](#how-to-run-the-Service)
       * [Installation](#installation)
          * [Clone the repository](#clone-the-repository)
+         * [Run on Docker](#Run-on-docker)
+         * [To Run Manually](#run-this-service)
          * [Install with virtualenv](#install-with-virtualenv)
-      * [Run your python script](#run-your-python-script)
-      * [Check the result](#check-the-result)
-   * [Docker](#docker)
-  
+      * [API Documentation](#api-documentation)
+
 
 ## How to run the Service
 
@@ -25,15 +25,28 @@ git clone git@github.com:pritesh543/compare_products.git
 cd compare_products
 ```
 
+## Run on Docker
+
+Create and Push the image 
+
+```bash
+docker build -t comp-product-app -f Dockerfile .
+```
+Run the Image
+```bash
+docker run -it -p 8000:8000 comp-product-app
+```
+
+## To Run Manually
+
 #### Install with virtualenv
 ```bash
 virtualenv --python=python[3.6|3.7|3.8] venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 
-## Run your python script
-
+#### Run service
 To Run on default port (By default it runs on 8000)
 ```bash
 python manage.py runserver
@@ -42,20 +55,7 @@ To run on specified port
 ```bash
 python manage.py runserver [port]
 ```
-## Check the result
+## API Documentation
 
-- Endpoints to get the product details filtered by category and name:
-```bash
-http://127.0.0.1:[port]/products?product_name={product_name}&product_category={product_category}
-```
-Parameters: product_category, product_name.
-
-- Endpoint to push the data into database:
-```bash
-http://127.0.0.1:[port]/products/push/
-```
-- Endpoint to batch import (upload file) into database:
-currenly supported: `csv` , ``xlsx``
-```bash
-http://127.0.0.1:[port]/products/push/batch/
-```
+Please refer API Documentation Available on repository.
+* [API Docs](https://github.com/pritesh543/compare_products/blob/master/APIDocument.md)
